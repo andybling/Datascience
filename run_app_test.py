@@ -46,7 +46,7 @@ tab1, tab2, tab3 = st.tabs(["Marketing Overview", "Bank Category Breakdown", "Ba
 # Overview
 with tab1:
     st.header("Bank Sales Overview")
-    chart = alt.Chart(filtered_data).mark_line(color="white").encode(
+    chart = alt.Chart(filtered_data).mark_line(color="brown").encode(
         x='Date:T',
         y='Sales:Q'
     ).properties(
@@ -62,7 +62,7 @@ with tab2:
         x='Category:N',
         y='Sales:Q',
         color=alt.Color('Category:N', scale=alt.Scale(domain=['Bank_Account', 'Credit_cards', 'Loans'],
-                                                       range=['red', 'black', 'white']))  # Use color scale
+                                                       range=['red', 'black', 'brown']))  # Use color scale
     ).properties(
         title='Bank Category Breakdown'
     )
@@ -75,7 +75,7 @@ with tab3:
         x='Date:T',
         y='Sales:Q',
         color=alt.Color('Category:N', scale=alt.Scale(domain=['Bank_Account', 'Credit_cards', 'Loans'],
-                                                       range=['red', 'black', 'white']))  # Use color scale
+                                                       range=['red', 'black', 'brown']))  # Use color scale
     ).properties(
         title='Sales Trends'
     )
