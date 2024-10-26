@@ -57,7 +57,7 @@ with tab2:
         x='Category:N',
         y='Sales:Q',
         color=alt.Color('Category:N', scale=alt.Scale(domain=['Bank_Account', 'Credit_cards', 'Loans'],
-                                                       range=['red', 'black', 'white']))  # Use color scale
+                                                       range=['red', 'black', 'brown']))  # Use color scale
     ).properties(
         title='Bank Category Breakdown'
     )
@@ -70,7 +70,7 @@ with tab3:
         x='Date:T',
         y='Sales:Q',
         color=alt.Color('Category:N', scale=alt.Scale(domain=['Bank_Account', 'Credit_cards', 'Loans'],
-                                                       range=['red', 'black', 'white']))  # Use color scale
+                                                       range=['red', 'black', 'brown']))  # Use color scale
     ).properties(
         title='Sales Trends'
     )
