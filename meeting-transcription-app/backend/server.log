@@ -1,0 +1,4 @@
+nohup: ignoring input
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Backend listening on port 4000
+[0mGET /health [32m200[0m 1.630 ms - 15[0m
