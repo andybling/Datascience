@@ -3,6 +3,7 @@ import multer from 'multer';
 import path from 'path';
 import fs from 'fs';
 import { transcribeAudio } from './services.js';
+import { register, login, authMiddleware, listMeetings, createMeetingAndTranscribe } from './controllers.js';
 
 const router = Router();
 
@@ -22,6 +23,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+// Auth
+router.post('/auth/register', register);
+router.post('/auth/login', login);
+
 router.post('/transcribe', upload.single('audio'), async (req, res) => {
   try {
     if (!req.file) {
@@ -33,6 +38,10 @@ router.post('/transcribe', upload.single('audio'), async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 });
+
+// Meetings
+router.get('/meetings', authMiddleware, listMeetings);
+router.post('/meetings', authMiddleware, upload.single('audio'), createMeetingAndTranscribe);
 
 export default router;
 

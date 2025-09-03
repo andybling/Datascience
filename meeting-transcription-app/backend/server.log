@@ -1,3 +1,9 @@
-[dotenv@17.2.1] injecting env (0) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
+[dotenv@17.2.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+(node:10849) [DEP0170] DeprecationWarning: The URL sqlite::memory: is invalid. Future versions of Node.js will throw an error.
+(Use `node --trace-deprecation ...` to show where the warning was created)
 Backend listening on port 4000
-[0mGET /health [32m200[0m 1.954 ms - 15[0m
+[0mPOST /api/auth/register [32m200[0m 79.725 ms - 35[0m
+[0mPOST /api/auth/login [32m200[0m 67.352 ms - 187[0m
+[0mGET /api/meetings [33m401[0m 0.390 ms - 25[0m
+[0mPOST /api/auth/login [32m200[0m 65.792 ms - 187[0m
+[0mGET /api/meetings [33m401[0m 0.401 ms - 25[0m

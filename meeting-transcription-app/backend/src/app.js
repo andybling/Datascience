@@ -6,6 +6,7 @@ import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 import { createRequire } from 'module';
 import routes from './routes.js';
+import { syncDatabase } from './models.js';
 
 dotenv.config();
 
@@ -34,9 +35,11 @@ app.get('/health', (req, res) => {
 
 const port = process.env.PORT || 4000;
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
-    // eslint-disable-next-line no-console
-    console.log(`Backend listening on port ${port}`);
+  syncDatabase().then(() => {
+    app.listen(port, () => {
+      // eslint-disable-next-line no-console
+      console.log(`Backend listening on port ${port}`);
+    });
   });
 }
 
