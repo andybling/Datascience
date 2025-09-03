@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 
-const databaseUrl = process.env.DATABASE_URL || 'sqlite::memory:';
+const databaseUrl = process.env.DATABASE_URL || 'sqlite:/app/data/dev.sqlite';
 
 export const sequelize = new Sequelize(databaseUrl, {
   logging: false,
